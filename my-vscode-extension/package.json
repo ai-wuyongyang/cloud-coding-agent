@@ -1,0 +1,53 @@
+{
+  "name": "minimal-vscode-extension-demo",
+  "displayName": "Minimal VS Code Extension Demo",
+  "description": "A tiny VS Code extension demo that shows a message from a command and a status bar item.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:ultimateAgent",
+    "onView:minimalDemo.chatView"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "minimalDemo",
+          "title": "ultimate Ai",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "minimalDemo": [
+        {
+          "type": "webview",
+          "id": "minimalDemo.chatView",
+          "name": "ultimate Ai"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "ultimateAgent",
+        "title": "ultimate Ai"
+      }
+    ]
+  },
+  "scripts": {
+    "build:webview": "vite build",
+    "dev:webview": "vite",
+    "test": "echo \"No tests yet\""
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.7",
+    "vite": "^8.0.16",
+    "vue": "^3.5.38"
+  }
+}

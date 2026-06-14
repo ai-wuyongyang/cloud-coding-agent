@@ -1,0 +1,13 @@
+.DS_Store
+node_modules/
+dist/
+out/
+coverage/
+*.log
+
+.env
+.env.*
+
+__pycache__/
+*.py[cod]
+.venv/
