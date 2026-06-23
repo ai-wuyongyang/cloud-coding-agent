@@ -1,7 +1,7 @@
 {
-  "name": "minimal-vscode-extension-demo",
-  "displayName": "Minimal VS Code Extension Demo",
-  "description": "A tiny VS Code extension demo that shows a message from a command and a status bar item.",
+  "name": "ultimate-ai",
+  "displayName": "ultimate ai",
+  "description": "A simple VS Code sidebar chat extension for ultimate ai.",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.80.0"
@@ -9,40 +9,37 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [
-    "onCommand:ultimateAgent",
-    "onView:minimalDemo.chatView"
-  ],
   "main": "./extension.js",
   "contributes": {
     "viewsContainers": {
       "activitybar": [
         {
-          "id": "minimalDemo",
-          "title": "ultimate Ai",
+          "id": "ultimateAiSidebar",
+          "title": "ultimate ai",
           "icon": "media/icon.svg"
         }
       ]
     },
     "views": {
-      "minimalDemo": [
+      "ultimateAiSidebar": [
         {
           "type": "webview",
-          "id": "minimalDemo.chatView",
-          "name": "ultimate Ai"
+          "id": "ultimateAiChatView",
+          "name": "ultimate ai",
+          "icon": "media/icon.svg"
         }
       ]
     },
     "commands": [
       {
-        "command": "ultimateAgent",
-        "title": "ultimate Ai"
+        "command": "ultimateAi.openSidebar",
+        "title": "Open Ultimate AI"
       }
     ]
   },
   "scripts": {
-    "build:webview": "vite build",
-    "dev:webview": "vite",
+    "build:webview": "vite build --config vite.config.mjs",
+    "dev:webview": "vite --config vite.config.mjs",
     "test": "echo \"No tests yet\""
   },
   "devDependencies": {
